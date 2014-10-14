@@ -1,3 +1,6 @@
 bundle exec rake db:drop
-daiyuzhangdeMacBook-Pro:mytwitter daiyuzhang$ bundle exec rake db:create
-daiyuzhangdeMacBook-Pro:mytwitter daiyuzhang$ bundle exec rake db:migrate
+bundle exec rake db:create
+bundle exec rake db:migrate
+
+
+2392479493
