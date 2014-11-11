@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
 	    user.remember_token = SecureRandom.urlsafe_base64
     end
 
-	validates :name, presence: true, length: { in: 9..30 }
+    validates :studentId, presence: true, 
+                        uniqueness: { case_sensitive: false },
+                        length: { minimum: 4 }
+	validates :name, presence: true,presence: true, length: { in: 9..30 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, 
                         format: { with: VALID_EMAIL_REGEX },

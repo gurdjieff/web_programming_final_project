@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
       def create
         secure_params = params.require(:user).permit(:name, :email, 
-                                  :password, :password_confirmation)
+                                  :studentId, :password, :password_confirmation)
         @user = User.new(secure_params)
         if @user.save
           sign_in @user 
