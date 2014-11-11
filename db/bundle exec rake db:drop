@@ -3,4 +3,17 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 
 
+
+$ rails generate controller StaticPages home help --no-test-framework
+$ rails destroy controller StaticPages home help
+
+
+
+$ rails generate model User name:string email:string
+$ bundle exec rake db:migrate
+$ bundle exec rake db:rollback
+$ rails destroy model User
+    $ rails generate migration add_index_to_users_email
+    $ rails generate migration add_password_digest_to_users password_digest:string
+
 2392479493
