@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :users       # NEW LINE
-  resources :searchFeedbacks, only:[:search]
   resources :feedbacks, only:[:new, :show, :create]  # NEW LINE
   resources :sessions, only: [:new, :create, :destroy]  # NEW LINE
   # resources :feedbacks
@@ -14,7 +13,10 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new', via: 'get'         # NEW LINE
   match '/signout', to: 'sessions#destroy', via: :delete    # NEW LINE
   match '/showFeedback', to: 'feedbacks#show', via: 'get'    # NEW LINE
-  match '/createFeedback', to: 'feedbacks#new', via: 'get'    
+  match '/createFeedback', to: 'feedbacks#new', via: 'get'
+  match '/search', to: 'feedbacks#search', via: 'post'    # NEW LINE
+
+
   
   # get 'static_pages/home'
   # get 'static_pages/help'

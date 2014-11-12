@@ -4,7 +4,6 @@ class FeedbacksController < ApplicationController
   end
 
   def show
-   @searchFeedbacks = Feedback.new
 	 @feedbacks = Feedback.all
   end
 
@@ -29,6 +28,4 @@ class FeedbacksController < ApplicationController
       @feedback = current_user.feedbacks.find_by_id(params[:id])
       redirect_to root_url if @feedbacks.nil?
     end
-
-   
 end
