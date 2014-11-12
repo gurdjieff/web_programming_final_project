@@ -1,0 +1,31 @@
+<h1>Feedback</h1>
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for(@feedback) do |f| %>
+    <%= render 'error_messages', object: f.object %>
+    <%= f.label :subjectName %>
+    <%= f.text_field :subjectName %>
+
+    <%= f.label :strengths %>
+        <%= f.select :strengths, {"strengths 1" => '1', "strengths 2" => '2',"strengths 3" => '3',"strengths 4" => '4',"strengths 5" => '5',} %>
+    <br />
+    <br />
+
+    <%= f.label  :weaknesses %>
+    <%= f.text_area  :weaknesses, size: '24x4' %>
+    <%= f.label  :recommendations %>
+    <%= f.text_area  :recommendations, size: '24x4' %>
+
+    <%= f.label :rate %>
+    <%= f.radio_button :rate, '1', :checked => true %> rate one
+    <%= f.radio_button :rate, '2' %> rate two
+    <%= f.radio_button :rate, '3' %> rate three
+    <%= f.radio_button :rate, '4' %> rate four
+    <%= f.radio_button :rate, '5' %> rate five
+    <%= f.radio_button :rate, '6' %> rate six
+
+    <br><br>
+    <%= f.submit "Create ", class: "btn btn-large btn-primary"  %> 
+<% end %>
+  </div>
+</div>

@@ -7,12 +7,27 @@ bundle exec rake db:migrate
 $ rails generate controller StaticPages home help --no-test-framework
 $ rails destroy controller StaticPages home help
 
+$ rails generate controller Users new --no-test-framework
+rails generate controller Feedbacks new show --no-test-framework
 
+
+ t.string :name
+      t.string :genre
+      t.string :description
+      t.integer :director_id
+      t.integer :duration
+      t.boolean :threeD
+rails generate model strength name:string
+rails generate model Feedback user_id:integer subjectName:string strengths:integer weaknesses:string recommendations:string rate:integer
 
 $ rails generate model User name:string email:string
 $ bundle exec rake db:migrate
+
+
+bundle exec rake db:migrate
 $ bundle exec rake db:rollback
 $ rails destroy model User
+rails destroy model Feedback
     $ rails generate migration add_index_to_users_email
     $ rails generate migration add_password_digest_to_users password_digest:string
 
