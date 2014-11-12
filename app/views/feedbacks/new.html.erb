@@ -4,7 +4,7 @@
 <%= form_for(@feedback) do |f| %>
     <%= render 'error_messages', object: f.object %>
     <%= f.label :subjectName %>
-    <%= f.text_field :subjectName %>
+    <%= f.collection_select(:subjectName, Subject.all, :name, :name ) %>
 
     <%= f.label :strengths %>
         <%= f.select :strengths, {"strengths 1" => '1', "strengths 2" => '2',"strengths 3" => '3',"strengths 4" => '4',"strengths 5" => '5',} %>

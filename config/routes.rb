@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match '/showFeedback', to: 'feedbacks#show', via: 'get'    # NEW LINE
   match '/createFeedback', to: 'feedbacks#new', via: 'get'
   match '/search', to: 'feedbacks#search', via: 'post'    # NEW LINE
+  match '/search', to: 'feedbacks#search', via: 'get'    # NEW LINE
 
 
   
