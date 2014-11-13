@@ -4,9 +4,9 @@
 
 <div class="row">
   <div class="span6 offset3">
-  <%= form_for(:subject_id, url: feedbackSearch_path) do |f| %>
+  <%= form_for(:feedback, url: feedbackSearch_path) do |f| %>
     <%= f.label :subject %>
-    <%= f.collection_select(:subject_id, Subject.all, :name, :name ) %>
+    <%= f.collection_select(:subject_id, Subject.all, :id, :name ) %>
     <br><br>
     <%= f.submit "Search", class: "btn btn-large btn-primary"  %> 
 <% end %>

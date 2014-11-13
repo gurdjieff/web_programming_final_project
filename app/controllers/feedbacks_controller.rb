@@ -20,12 +20,10 @@ class FeedbacksController < ApplicationController
   end
 
    def search
-    # SQLite3::SQLException: no such column: feedbacks.subject_id: SELECT "feedbacks".* FROM "feedbacks"  WHERE "feedbacks"."subject_id" = ?
-# SQLite3::SQLException: no such column: feedbacks.subject_id: SELECT "feedbacks".* FROM "feedbacks"  WHERE "feedbacks"."subject_id" = ?
-
-    if params && params[:subject_id] && params[:subject_id][:subject_id]
-      @subject = Subject.find_by_name(params[:subject_id][:subject_id])
+    if params && params[:feedback] && params[:feedback][:subject_id]
+      @subject = Subject.find(params[:feedback][:subject_id])
       @feedbacks = @subject.feedbacks  
+    else
     end
   end
 
