@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141112132417) do
 
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"
-    t.string   "subjectName"
+    t.string   "subject_id"
     t.integer  "strengths"
     t.string   "weaknesses"
     t.string   "recommendations"

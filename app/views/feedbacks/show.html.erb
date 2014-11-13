@@ -3,7 +3,7 @@
 <br />
 <br />
     <h3>subject</h3>
-    <p><%= feedback.subjectName %></p>
+    <p><%= Subject.find(feedback.subject_id).name %></p>
     <h3>strengths</p>
     <p><%= feedback.strengths %></p>
     <h3>weaknesses</h3>
@@ -17,4 +17,4 @@
 <% end %>
 <br />
 
-<%= link_to 'postFeedback', createFeedback_path %>
+<%= link_to 'postFeedback', feedbackCreate_path %>

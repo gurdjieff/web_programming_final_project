@@ -1,24 +1,26 @@
-<h1>Listing Feedbacks</h1>
+<h1>Search Feedbacks</h1>
+
+
 
 <div class="row">
   <div class="span6 offset3">
-  <%= form_for :subjectName, :url => { :action => :search} do |f| %>
-    <%= f.label :subjectName %>
-    <%= f.collection_select(:director_id, Subject.all, :id, :name ) %>
-
-
+  <%= form_for(:subject_id, url: feedbackSearch_path) do |f| %>
+    <%= f.label :subject %>
+    <%= f.collection_select(:subject_id, Subject.all, :name, :name ) %>
     <br><br>
     <%= f.submit "Search", class: "btn btn-large btn-primary"  %> 
 <% end %>
   </div>
 </div>
 
+
+
+<% if @feedbacks %>
 <% @feedbacks.each do |feedback| %>
 <br />
 <br />
-
     <h3>subject</h3>
-    <p><%= feedback.subjectName %></p>
+    <p><%= Subject.find(feedback.subject_id).name %></p>
     <h3>strengths</p>
     <p><%= feedback.strengths %></p>
     <h3>weaknesses</h3>
@@ -29,12 +31,8 @@
     <p><%= feedback.rate %></h3>
     <br />
 <br />
-
-
+<% end %>
 <% end %>
 
-<br />
 
 
-
-<%= link_to 'postFeedback', createFeedback_path %>

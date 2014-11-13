@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'feedback_search/show'
+
+  get 'feedback_search/search'
+
   resources :users       # NEW LINE
   resources :feedbacks, only:[:new, :show, :create]  # NEW LINE
   resources :sessions, only: [:new, :create, :destroy]  # NEW LINE
@@ -12,16 +16,10 @@ Rails.application.routes.draw do
   match '/signup',  to: 'users#new', via: 'get'
   match '/signin',  to: 'sessions#new', via: 'get'         # NEW LINE
   match '/signout', to: 'sessions#destroy', via: :delete    # NEW LINE
-  match '/showFeedback', to: 'feedbacks#show', via: 'get'    # NEW LINE
-  match '/createFeedback', to: 'feedbacks#new', via: 'get'
-  match '/search', to: 'feedbacks#search', via: 'post'    # NEW LINE
-  match '/search', to: 'feedbacks#search', via: 'get'    # NEW LINE
-
-
-  
-  # get 'static_pages/home'
-  # get 'static_pages/help'
-  # get "static_pages/about"  # NEW LINE
+  match '/feedbackShow', to: 'feedbacks#show', via: 'get'    # NEW LINE
+  match '/feedbackCreate', to: 'feedbacks#new', via: 'get'
+  match '/feedbackSearch', to: 'feedbacks#search', via: 'post'
+  match '/feedbackSearch', to: 'feedbacks#search', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

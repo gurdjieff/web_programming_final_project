@@ -10,7 +10,7 @@ class FeedbacksController < ApplicationController
   
   def create
     feecback_params = params.require(:feedback).                                         
-                      permit(:subjectName, :strengths, :weaknesses,:recommendations,:rate)
+                      permit(:subject_id, :strengths, :weaknesses,:recommendations,:rate)
     @feedback = current_user.feedbacks.build(feecback_params) 
     if @feedback.save
             redirect_to action: 'show', notice: 'subject comment was successfully created.'
@@ -20,7 +20,13 @@ class FeedbacksController < ApplicationController
   end
 
    def search
-    redirect_to action: "show" 
+    # SQLite3::SQLException: no such column: feedbacks.subject_id: SELECT "feedbacks".* FROM "feedbacks"  WHERE "feedbacks"."subject_id" = ?
+# SQLite3::SQLException: no such column: feedbacks.subject_id: SELECT "feedbacks".* FROM "feedbacks"  WHERE "feedbacks"."subject_id" = ?
+
+    if params && params[:subject_id] && params[:subject_id][:subject_id]
+      @subject = Subject.find_by_name(params[:subject_id][:subject_id])
+      @feedbacks = @subject.feedbacks  
+    end
   end
 
   private

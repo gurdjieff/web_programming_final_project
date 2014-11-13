@@ -20,6 +20,7 @@ rails generate controller Feedbacks new show --no-test-framework
 rails generate model strength name:string
 rails generate model Feedback user_id:integer subjectName:string strengths:integer weaknesses:string recommendations:string rate:integer
 
+rails generate model Subject name:string email:string
 $ rails generate model User name:string email:string
 $ bundle exec rake db:migrate
 
