@@ -1,0 +1,20 @@
+<h1>Listing Feedbacks</h1>
+<% @feedbacks.each do |feedback| %>
+<br />
+<br />
+    <h3>subject</h3>
+    <p><%= Subject.find(feedback.subject_id).name %></p>
+    <h3>strengths</p>
+    <p><%= feedback.strengths %></p>
+    <h3>weaknesses</h3>
+    <p><%= feedback.weaknesses %></p>
+    <h3>recommendations</h3>
+    <p><%= feedback.recommendations %></p>
+    <h3>rating</h3>
+    <p><%= feedback.rate %></h3>
+    <br />
+<br />
+<% end %>
+<br />
+
+<%= link_to 'postFeedback', feedbackCreate_path %>

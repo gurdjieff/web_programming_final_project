@@ -7,6 +7,15 @@ class FeedbacksController < ApplicationController
 	 @feedbacks = Feedback.all
   end
 
+  def showStudentsNoFeedback
+   # @feedbacks = current_user.feedbacks
+   @users = User.all
+  end
+
+  def showMyFeedback
+   @feedbacks = current_user.feedbacks
+  end
+
   
   def create
     feecback_params = params.require(:feedback).                                         

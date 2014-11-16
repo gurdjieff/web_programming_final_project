@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'subjects/show'
+
+  get 'courses/modify'
+
+  get 'courses/show'
+
   get 'feedback_search/show'
 
   get 'feedback_search/search'
@@ -6,6 +12,8 @@ Rails.application.routes.draw do
   resources :users       # NEW LINE
   resources :feedbacks, only:[:new, :show, :create]  # NEW LINE
   resources :sessions, only: [:new, :create, :destroy]  # NEW LINE
+  resources :courses, only: [:show, :destroy]  # NEW LINE
+
   # resources :feedbacks
   # get 'users/new'
 
@@ -17,9 +25,17 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new', via: 'get'         # NEW LINE
   match '/signout', to: 'sessions#destroy', via: :delete    # NEW LINE
   match '/feedbackShow', to: 'feedbacks#show', via: 'get'    # NEW LINE
+  match '/myFeedbackShow', to: 'feedbacks#showMyFeedback', via: 'get'    # NEW LINE
   match '/feedbackCreate', to: 'feedbacks#new', via: 'get'
   match '/feedbackSearch', to: 'feedbacks#search', via: 'post'
   match '/feedbackSearch', to: 'feedbacks#search', via: 'get'
+  match '/courseShow', to: 'courses#show', via: 'get'
+  match '/courseModify', to: 'courses#modify', via: 'get'
+  match '/deleteSubject', to: 'courses#destroy', via: 'delete'    # NEW LINE
+  match '/studentsNoFeedback', to: 'feedbacks#showStudentsNoFeedback', via: 'get'    # NEW LINE
+  match '/subjectsShow', to: 'subjects#show', via: 'get'    # NEW LINE
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -7,6 +7,13 @@
         <ul>
           <li><%= link_to "About",   about_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
+          <% if signed_in? %>
+             <li><%= link_to "Home", current_user %></li>
+            <% else %>
+            <li><%= link_to "Home", root_path %></li>
+            <% end %>
+
+              <li><%= link_to "Help", help_path %></li>
           <li><a href="http://news.railstutorial.org/">News</a></li>
         </ul>
       </nav>

@@ -1,0 +1,16 @@
+<h1>Listing all students no Feedbacks</h1>
+<% @users.each do |user| %>
+<br />
+<br />
+    <% if user.feedbacks.size == 0 %>
+    <h3>username</h3>
+    <p><%= user.name %></p>
+    <p><%= user.studentId %></p>
+
+    <% end %>
+    <br />
+<br />
+<% end %>
+<br />
+
+<%= link_to 'postFeedback', feedbackCreate_path %>

@@ -1,0 +1,20 @@
+<h1>all courses</h1>
+<% @courses.each do |course| %>
+<br />
+<br />
+    <h4>course name</h4>
+    <p><%= course.name %></p>
+    <h4>include subjects</h4>
+    <% course.subjects.each do |subject| %>
+    <p><%= subject.name %></p> 
+	<% end %>
+    <%= link_to "delete", course, method: :delete,
+                       data: { confirm: "You sure?" },
+                       title: course %>
+
+    <br />
+
+<% end %>
+<br />
+
+<%= link_to 'postFeedback', feedbackCreate_path %>

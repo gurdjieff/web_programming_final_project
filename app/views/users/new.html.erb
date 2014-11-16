@@ -12,6 +12,9 @@
           <%= f.label :email %>
           <%= f.text_field :email %>
 
+          <%= f.label :course %>
+          <%= f.collection_select(:course_Id, Course.all, :id, :name ) %>
+          
           <%= f.label :studentId %>
           <%= f.text_field :studentId %>
 

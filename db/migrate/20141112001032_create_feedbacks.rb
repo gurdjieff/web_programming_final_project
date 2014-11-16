@@ -7,7 +7,6 @@ class CreateFeedbacks < ActiveRecord::Migration
       t.string :weaknesses
       t.string :recommendations
       t.integer :rate
-
       t.timestamps
     end
   end

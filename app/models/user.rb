@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
     has_many :feedbacks     # NEW LINE - Indicates association with Micropost
     # has_many :microposts, dependent: :destroy   #  CHANGED
-	
+	has_many :grades
+    belongs_to :course
+
+
+
     before_save do |user| 
         user.email = email.downcase 
 	    user.remember_token = SecureRandom.urlsafe_base64

@@ -2,10 +2,13 @@ bundle exec rake db:drop
 bundle exec rake db:create
 bundle exec rake db:migrate
 
-
+rails generate migration create_course_subject_join_table
+rails generate migration create_category_subject_join_table
 
 $ rails generate controller StaticPages home help --no-test-framework
-$ rails destroy controller StaticPages home help
+$ rails destroy controller subjects show --no-test-framework
+rails generate controller Courses modify show --no-test-framework
+rails generate controller Courses show --no-test-framework
 
 $ rails generate controller Users new --no-test-framework
 rails generate controller Feedbacks new show --no-test-framework
@@ -19,6 +22,11 @@ rails generate controller Feedbacks new show --no-test-framework
       t.boolean :threeD
 rails generate model strength name:string
 rails generate model Feedback user_id:integer subjectName:string strengths:integer weaknesses:string recommendations:string rate:integer
+rails generate model course name:string
+
+rails generate model crade user_id:integer subject_id:integer over_mark:integer
+
+
 
 rails generate model Subject name:string email:string
 $ rails generate model User name:string email:string
