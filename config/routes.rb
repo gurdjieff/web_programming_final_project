@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   match '/about',   to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/signup',  to: 'users#new', via: 'get'
+  match '/userShow',  to: 'users#show', via: 'get'
+
   match '/signin',  to: 'sessions#new', via: 'get'         # NEW LINE
   match '/signout', to: 'sessions#destroy', via: :delete    # NEW LINE
   match '/feedbackShow', to: 'feedbacks#show', via: 'get'    # NEW LINE
@@ -32,11 +34,13 @@ Rails.application.routes.draw do
   match '/courseShow', to: 'courses#show', via: 'get'
   match '/courseModify', to: 'courses#modify', via: 'get'
   match '/deleteSubject', to: 'courses#deleteSubject', via: 'post'    # NEW LINE
-    match '/deleteSubject', to: 'courses#deleteSubject', via: 'get'    # NEW LINE
+  match '/deleteSubject', to: 'courses#deleteSubject', via: 'get'    # NEW LINE
 
   match '/studentsNoFeedback', to: 'feedbacks#showStudentsNoFeedback', via: 'get'    # NEW LINE
   match '/subjectsShow', to: 'subjects#show', via: 'get'    # NEW LINE
   match '/addSubject', to: 'courses#addSubject', via: 'post'    # NEW LINE
+  match '/showCourse', to: 'courses#showCourse', via: 'get'    # NEW LINE
+  match '/showSubjectInOrder', to: 'subjects#showSubjectInOrder', via: 'get'    # NEW LINE
 
 
 

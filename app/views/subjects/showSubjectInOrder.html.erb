@@ -1,0 +1,29 @@
+<h1>all subjects</h1>
+<!-- <div class="row"> -->
+  <!-- <div class="span6 offset3"> -->
+<% @subjects.each do |subject| %>
+<br />
+<br />
+    <h4>subject name</h4>
+    <p><%= subject.name %></p>
+        
+    <h4>the number of feedbacks</h4>
+    <p><%= subject.feedbacks.size %></p>
+
+
+    <!-- feedback. -->
+<!-- </div> -->
+<!-- </div> -->
+
+
+
+
+ 
+    
+    
+    <br />
+
+<% end %>
+<br />
+
+<%= link_to 'postFeedback', feedbackCreate_path %>

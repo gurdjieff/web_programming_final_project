@@ -9,6 +9,10 @@ class CoursesController < ApplicationController
 	 @courses = Course.all
   end
 
+  def showCourse
+    @course = Course.find(params[:id])
+  end
+
   def deleteSubject
     if params[:subject] && params[:course]
       course = Course.find(params[:course])

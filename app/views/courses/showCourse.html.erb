@@ -1,0 +1,28 @@
+<h1>courses</h1>
+<div class="row">
+  <div class="span6 offset3">
+
+    <h4>course name</h4>
+    <p><%= @course.name %></p>
+    <h4>include subjects</h4>
+    <% @course.subjects.each do |subject| %>
+    <p><%= subject.name %>
+    <%= link_to "delete", deleteSubject_path(:subject => subject, :course => @course), method: :post,
+                       data: { confirm: "You sure?" },
+                       title: @course %> </p> 
+        <% end %>
+<br><br>
+    <h4> add a subject to this course</h4> 
+    <%= form_for(:addSubject, url: addSubject_path(:course => @course), ) do |f| %>
+    <%= f.collection_select(:subject_id, Subject.all, :id, :name ) %>
+    <br><br>
+    <%= f.submit "submit", class: "btn btn-primary"  %> 
+<% end %>
+
+    <br />
+<br />
+</div>
+</div>
+
+
+<%= link_to 'postFeedback', feedbackCreate_path %>
