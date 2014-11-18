@@ -9,14 +9,28 @@ class CoursesController < ApplicationController
 	 @courses = Course.all
   end
 
-  def destroy
-  		 course.destroy
-
+  def deleteSubject
+    if params[:subject] && params[:course]
+      course = Course.find(params[:course])
+      course.subjects.delete(params[:subject])
+      # course.subjects.each do |s|
+      #   if s.id == params[:subject]
+      #     s.destroy
+      #   end
+      # end
+      end
     @courses = Course.all
+    render action: "show"     
+  end
 
-     # redirect_to root_url
-     render action: "show" 
-  end 
+  # def destroy
+  # 		 course.destroy
+
+  #   @courses = Course.all
+
+  #    # redirect_to root_url
+  #    render action: "show" 
+  # end 
 
 
 # def create

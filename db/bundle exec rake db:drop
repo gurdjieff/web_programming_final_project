@@ -6,7 +6,9 @@ rails generate migration create_course_subject_join_table
 rails generate migration create_category_subject_join_table
 
 $ rails generate controller StaticPages home help --no-test-framework
-$ rails destroy controller subjects show --no-test-framework
+
+
+rails generate controller subjects show --no-test-framework
 rails generate controller Courses modify show --no-test-framework
 rails generate controller Courses show --no-test-framework
 

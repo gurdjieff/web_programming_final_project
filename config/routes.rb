@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   match '/feedbackSearch', to: 'feedbacks#search', via: 'get'
   match '/courseShow', to: 'courses#show', via: 'get'
   match '/courseModify', to: 'courses#modify', via: 'get'
-  match '/deleteSubject', to: 'courses#destroy', via: 'delete'    # NEW LINE
+  match '/deleteSubject', to: 'courses#deleteSubject', via: 'post'    # NEW LINE
+    match '/deleteSubject', to: 'courses#deleteSubject', via: 'get'    # NEW LINE
+
   match '/studentsNoFeedback', to: 'feedbacks#showStudentsNoFeedback', via: 'get'    # NEW LINE
   match '/subjectsShow', to: 'subjects#show', via: 'get'    # NEW LINE
 
