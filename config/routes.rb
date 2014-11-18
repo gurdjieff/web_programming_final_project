@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   match '/studentsNoFeedback', to: 'feedbacks#showStudentsNoFeedback', via: 'get'    # NEW LINE
   match '/subjectsShow', to: 'subjects#show', via: 'get'    # NEW LINE
+  match '/addSubject', to: 'courses#addSubject', via: 'post'    # NEW LINE
 
 
 

@@ -1,4 +1,6 @@
 <h1>Listing all Feedbacks</h1>
+<div class="row">
+  <div class="span6 offset3">
 <% @feedbacks.each do |feedback| %>
 <br />
 <br />
@@ -16,5 +18,7 @@
 <br />
 <% end %>
 <br />
+</div>
+</div>
 
 <%= link_to 'postFeedback', feedbackCreate_path %>

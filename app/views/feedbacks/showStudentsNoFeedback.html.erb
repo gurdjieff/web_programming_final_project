@@ -1,4 +1,7 @@
 <h1>Listing all students no Feedbacks</h1>
+<div class="row">
+  <div class="span6 offset3">
+
 <% @users.each do |user| %>
 <br />
 <br />
@@ -12,5 +15,6 @@
 <br />
 <% end %>
 <br />
-
+</div>
+  </div>
 <%= link_to 'postFeedback', feedbackCreate_path %>
