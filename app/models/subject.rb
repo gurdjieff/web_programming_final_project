@@ -6,7 +6,7 @@ class Subject < ActiveRecord::Base
   # default_scope -> { order('subject.feedbacks.size DESC') }
  has_many :grade_users, :class_name => "User" ,
                :through => :crades, :source => :user
-    has_many :feedback_subjects, :class_name => "User" ,
+    has_many :feedback_users, :class_name => "User" ,
                :through => :feedbacks, :source => :user
   default_scope -> { order('created_at DESC') }
 end

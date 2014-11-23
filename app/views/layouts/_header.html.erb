@@ -4,8 +4,22 @@
           <%= link_to "Feedback app", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "students", studentsNoFeedback_path %></li>
-               
+              <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    students <b class="caret"></b>
+                  </a>
+               <ul class="dropdown-menu">
+                    <li><%= link_to "subject no feedbacks", studentsNoFeedback_path %></li>
+                    <li><%= link_to "subjects feedback subject", studentsFeedbackSubject_path %></li>
+
+                    <li><%= link_to "subjects had been graded", studentsHadBeenGraded_path %></li>
+
+
+
+
+
+                  </ul>
+
                 <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     subject <b class="caret"></b>

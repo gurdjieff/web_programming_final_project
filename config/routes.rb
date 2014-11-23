@@ -44,6 +44,10 @@ Rails.application.routes.draw do
   match '/showSubjectHasFeedbacked', to: 'subjects#showSubjectHasFeedbacked', via: 'get'    # NEW LINE
   match '/showSubjectHasGraded', to: 'subjects#showSubjectHasGraded', via: 'get'    # NEW LINE
 
+  match '/studentsFeedbackSubject', to: 'users#studentsFeedbackSubject', via: 'get'    # NEW LINE
+  match '/studentsFeedbackSubject', to: 'users#studentsFeedbackSubject', via: 'post'    # NEW LINE
+  match '/studentsHadBeenGraded', to: 'users#studentsHadBeenGraded', via: 'get'    # NEW LINE
+  match '/studentsHadBeenGraded', to: 'users#studentsHadBeenGraded', via: 'post'    # NEW LINE
 
 
 
