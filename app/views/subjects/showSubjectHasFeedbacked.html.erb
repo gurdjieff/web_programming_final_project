@@ -1,0 +1,43 @@
+<h1>user feedbacked subjects</h1>
+<!-- <div class="row"> -->
+  <!-- <div class="span6 offset3"> -->
+<% @subjects.each do |subject| %>
+<br />
+<br />
+    <h4>subject name</h4>
+    <p><%= subject.name %></p>
+    <h4>description</h4>
+    <p><%= subject.description %></p>
+    <h4>ca_percent</h4>
+    <p><%= subject.ca_percent %></p>
+    <h4>final_exam_percent</h4>
+    <p><%= subject.final_exam_percent %></p>
+
+    <h4>related courses</h4>
+    <% subject.courses.each do |course| %>
+
+    <p><%= link_to course.name, showCourse_path(:id => course.id) %></p>
+
+    <% end %>
+
+    <h4>students that feedback the courses</h4>
+    <% subject.feedbacks.each do |feedback| %>
+    <p><%= link_to User.find(feedback.user_id).name, userShow_path(:id => feedback.user_id) %></p>
+
+    <!-- feedback. -->
+    <% end %>
+<!-- </div> -->
+<!-- </div> -->
+
+
+
+
+ 
+    
+    
+    <br />
+
+<% end %>
+<br />
+
+<%= link_to 'postFeedback', feedbackCreate_path %>

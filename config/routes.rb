@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   match '/addSubject', to: 'courses#addSubject', via: 'post'    # NEW LINE
   match '/showCourse', to: 'courses#showCourse', via: 'get'    # NEW LINE
   match '/showSubjectInOrder', to: 'subjects#showSubjectInOrder', via: 'get'    # NEW LINE
+  match '/showSubjectHasFeedbacked', to: 'subjects#showSubjectHasFeedbacked', via: 'get'    # NEW LINE
+  match '/showSubjectHasGraded', to: 'subjects#showSubjectHasGraded', via: 'get'    # NEW LINE
 
 
 

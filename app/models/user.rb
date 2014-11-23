@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
     has_many :feedbacks     # NEW LINE - Indicates association with Micropost
     # has_many :microposts, dependent: :destroy   #  CHANGED
-	has_many :grades
+	has_many :crades
     belongs_to :course
 
 
     has_many :grade_subjects, :class_name => "Subject" ,
-               :through => :grades, :source => :Subject
+               :through => :crades, :source => :subject
     has_many :feedback_subjects, :class_name => "Subject" ,
-               :through => :feedbacks, :source => :Subject
+               :through => :feedbacks, :source => :subject
 
 
 
