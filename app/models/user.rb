@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
     belongs_to :course
 
 
+    has_many :grade_subjects, :class_name => "Subject" ,
+               :through => :grades, :source => :Subject
+    has_many :feedback_subjects, :class_name => "Subject" ,
+               :through => :feedbacks, :source => :Subject
+
+
 
     before_save do |user| 
         user.email = email.downcase 
