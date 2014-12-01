@@ -2,6 +2,10 @@ bundle exec rake db:drop
 bundle exec rake db:create
 bundle exec rake db:migrate
 
+
+rails generate migration add_index_to_course_subject_
+
+
 rails generate migration create_course_subject_join_table
 rails generate migration create_category_subject_join_table
 

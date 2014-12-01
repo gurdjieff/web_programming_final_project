@@ -3,7 +3,7 @@
   <div class="span6 offset3">
 <% @courses.each do |course| %>
 <br />
-<br />
+<p>================================================================</p>
     <h4>course name</h4>
     <p><%= course.name %></p>
     <h4>include subjects</h4>
@@ -14,17 +14,15 @@
                        title: course %> </p> 
         <% end %>
 <br><br>
+    <% if (Subject.all - course.subjects).count > 0 %>
     <h4> add a subject to this course</h4> 
     <%= form_for(:addSubject, url: addSubject_path(:course => course), ) do |f| %>
-    <%= f.collection_select(:subject_id, Subject.all, :id, :name ) %>
+    <%= f.collection_select(:subject_id, (Subject.all - course.subjects), :id, :name ) %>
     <br><br>
     <%= f.submit "submit", class: "btn btn-primary"  %> 
 <% end %>
-
-    <br />
-
 <% end %>
-<br />
+<% end %>
 </div>
 </div>
 
