@@ -21,11 +21,11 @@
     <% end %>
 
     <h4>students that feedback the courses</h4>
-    <% subject.feedbacks.each do |feedback| %>
-    <p><%= link_to User.find(feedback.user_id).name, userShow_path(:id => feedback.user_id) %></p>
+    <% subject.feedback_users.uniq.each do |user| %>
+    <p><%= link_to user.name, userShow_path(:id => user.id) %></p>
+    <% end %>    
 
     <!-- feedback. -->
-    <% end %>
 <!-- </div> -->
 <!-- </div> -->
 
