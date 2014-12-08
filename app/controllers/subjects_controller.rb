@@ -14,4 +14,11 @@ def showSubjectHasFeedbacked
     @subjects = @subjects.sort { |a,b| a.feedbacks.size <=> b.feedbacks.size }    
   	# @subjects.sort(@subjects.feedbacks.size)
   end
+  def showCategoriesSubjectBelongTo
+    if params && params[:categories_id] && params[:categories_id][:subject_id]
+      sub = Subject.find(params[:categories_id][:subject_id])
+      @categories = sub.categories
+    else
+    end
+  end
 end

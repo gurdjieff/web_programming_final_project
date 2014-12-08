@@ -7,7 +7,7 @@ rails generate migration add_index_to_course_subject_
 
 
 rails generate migration create_course_subject_join_table
-rails generate migration create_category_subject_join_table
+rails generate migration create_categories_subjects_join_table
 
 $ rails generate controller StaticPages home help --no-test-framework
 

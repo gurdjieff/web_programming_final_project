@@ -2,7 +2,7 @@ class Subject < ActiveRecord::Base
   has_many :feedbacks
   has_many :crades
   has_and_belongs_to_many :courses
-  has_and_belongs_to_many :categorys
+  has_and_belongs_to_many :categories
   # default_scope -> { order('subject.feedbacks.size DESC') }
  has_many :grade_users, :class_name => "User" ,
                :through => :crades, :source => :user

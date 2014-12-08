@@ -1,4 +1,8 @@
     <% provide(:title, 'Home') %>
+      <% if signed_in? %>
+    <li><%= link_to "Users", current_user %></li>
+    <% else %>
+
     <div class="center hero-unit">
       <h1>Student Feedback Web Application.</h1>
     </br>
@@ -6,11 +10,10 @@
       <%= link_to "Rigester", signup_path , class: "btn btn-large btn-primary" %>
     </br>
     </br>
-
-
-
       <%= link_to "sign in", signin_path , class: "btn btn-large btn-primary", bgcolor:"red"%>
 
     </div>
+                  <% end %>
+
 
     
